@@ -1,0 +1,381 @@
+
+bg-1 = gray
+bg-2 = lightgray
+bg-3 = rgb(240, 240, 240)
+
+my-orange = #ff9900
+bg-yel = #ffd480
+bg-blue = #00a3ff
+col-green = #1eff00
+col-green-2 = #118f00
+
+.svg
+	display flex
+	flex-direction row
+	justify-content center
+svg
+	text
+		font 7px Verdana
+
+svg
+	path
+		fill none
+		stroke #333333
+		width 1px
+	line
+		fill none
+		stroke #333333
+		width 1px
+
+svg
+	.grid-line
+		stroke black
+		shape-rendering crispedges
+		stroke-opacity 0.1
+svg
+	.rect
+		border thin solid black
+
+
+
+bord() // Для отладки
+	border solid black 1px
+
+html, body, .img-1, img, .block-block, .block-list
+body
+	background-color: bg-3
+
+// Меню заголовков:
+
+.nav-menu, .h1, .h2, a, p
+
+h1()
+	font-size: 35px
+
+h2()
+	font-size: 25px
+
+.nav-menu
+	display: grid
+	grid-template-columns  repeat(2, 1fr)
+	grid-template-rows 55px 55px //repeat(1, 1fr)
+	background-color: bg-2
+	p
+		grid-column 1/3
+		margin-top: 7px
+		width: 100%
+		text-align: center
+		font-size: 27px
+
+@media (max-width 1900px)
+	.nav-menu, p, a.h2
+
+	.nav-menu		
+		grid-template-rows 50px repeat(2, 1fr)
+		grid-template-columns 1fr
+		p
+			grid-row 1
+			grid-column 1
+			margin: 7px auto
+		a.h2
+			grid-row 3
+			grid-column 1
+		a
+			min-width 480px
+			max-width 1100px
+			width 80%
+			margin: 7px auto
+
+.h1, .h2
+	text-align: center
+	margin: 0px 10px
+	background-color: bg-blue
+	border-radius: 8px
+	border 2px solid black
+	height: 45px
+	&:hover
+	&:active
+		background-color: bg-yel
+a
+	text-decoration: none
+	color: white
+	&:hover
+		text-decoration: none
+		color: my-orange
+
+.h1
+	h2()
+	grid-column 1/2
+	grid-row 2/3
+
+.h2
+	h2() 
+	grid-column 2/3
+	grid-row 2/3
+
+// Галерея:
+
+img
+	align middle 
+	width 200px
+	height 200px
+	margin 10px
+	border-radius: 7px
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+
+
+.img-1 img
+	border-radius: 10px
+
+
+a > img // Для выделения активного элемента
+	border: 2px solid col-green-2
+	&:hover
+		border: 2px dashed col-green-2
+
+.img-f-1
+	//bord()
+
+.img-f-1 
+	max-width 1100px
+	min-width 480px
+	width: 100%
+
+.img-f-0
+	min-width 480px
+	max-width 1100px
+	grid-template-columns auto 
+	grid-template-rows auto 
+	width: 80%
+	margin: 20px auto
+	border-radius: 8px
+	background-color: white
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3)
+
+
+.img-f-1 img
+	width: 162px
+	height: 160px
+	background-color: bg-2
+	display: inline-block
+	
+
+@media (max-width 1100px)
+	.img-f-1
+		display: grid
+		grid-template-rows repeat(3, 220px)
+		grid-template-columns repeat(2, 295px)
+		margin: auto
+		width: 480px
+	.img-f-0
+		width: 80%
+		
+
+
+// Несколько классов, для красивого scroll-бара:
+
+// Сетка для блока описания сериала, его картинки и заголовка
+
+.block-title, .block-title > p, .main-title
+
+.block-title > p, .main-title
+	padding 2px 7px
+
+.block-title
+	display: grid
+	min-width 480px
+	grid-template-columns auto
+	grid-template-rows 50px auto 
+	width: 80%
+	margin: 20px auto
+	border-radius: 8px
+	background-color: white
+	padding: 10px
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3)
+
+.block-title > p.title
+	grid-columns 1/2
+
+.title > p
+	h2()
+	padding: 6px
+	font-weight: bold
+
+@media (min-width 480px)
+	.block-title, details, 
+		width 1100px
+		margin-top: 0px
+	table
+		max-width: 900px
+	.block-title p
+		font-size: 20px
+	.block-title
+		max-width: 1100px
+		.title > p
+			font-size: 30px
+
+// Footer:
+
+.page-footer 
+	padding: 1rem;
+	background: #333;
+	color: #fff;
+	text-align: center;
+
+.page-footer.fixed-bottom 
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+
+
+// Page 2: Раскрывающиеся списки
+
+.table p, .table input, .left-edge-1, .right-edge-1
+	//bord()
+
+.left-edge-1, .right-edge-1
+	margin: 0px 10px
+
+.left-edge-2, .right-edge-2, .center-edge-2
+	margin: 0px 10px
+	display: grid
+	//bord()
+
+.left-edge-2
+	grid-column 1/2
+
+.center-edge-2
+	grid-column 2/3
+
+.right-edge-2
+	grid-column 3/4
+
+p.title-1
+	font-weight: bold
+
+.title-1-1
+	display: grid
+	grid-column 1/3
+	text-align: center
+	font-size: x-large
+
+.title-1-2
+	display: grid
+	grid-column 1/4
+	text-align: center
+	font-size: x-large
+
+.table
+	display: grid
+	grid-template-columns repeat(2, 1fr)
+	grid-template-rows 1fr //repeat(5, 1fr)
+	width: 80%
+	margin: 20px auto
+	padding: 10px
+	background-color: white
+	border-radius: 10px
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25)
+	& > button
+		display: grid
+		grid-column: 1/3
+		width: 45%
+		margin: auto
+		border: solid black 2px
+		border-radius: 5px
+		background-color: bg-blue
+		&:hover
+			background-color: bg-yel
+			border: dashed black 2px
+
+.table-2
+	display: grid
+	grid-template-columns max-content max-content auto //repeat(2, 1fr)
+	grid-template-rows 1fr //repeat(5, 1fr)
+	width: 80%
+	margin: 20px auto
+	padding: 10px
+	background-color: white
+	border-radius: 10px
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25)
+	& > button
+		display: grid
+		grid-column: 1/4
+		width: 45%
+		margin: auto
+		border: solid black 2px
+		border-radius: 5px
+		background-color: bg-blue
+		&:hover
+			background-color: bg-yel
+			border: dashed black 2px
+
+.table > p, .table > input
+	display block
+
+.right-edge-1
+	display: grid
+	grid-column: 2/3
+
+@media (min-width 800px)
+	details
+		width 800px
+		margin auto
+
+@media (min-width 1200px)
+	details, .main-block, .block-01, .block-02
+		//bord()
+		
+	details
+		width 1000px
+		margin auto
+	.main-block
+		display: grid
+		grid-template-columns repeat(2, 1fr)
+		grid-template-rows repeat(2, 1fr)
+	.block-01
+		display: grid
+		grid-column: 1/2
+		grid-row: 1/2
+	.block-02
+		display: grid
+		grid-column: 2/3
+		grid-row: 1/3
+	.table, .table-2
+		width: 90%
+		margin: 20px auto
+	summary
+		font-size: large
+
+// Таблица 
+
+table
+	width: 80%
+	max-width 950px
+	min-width 400px
+	margin:  auto;
+	td
+		padding 4px 0px
+		bord()
+
+tr.title
+	td
+		font-weight: bold
+
+// 3я страница: 
+
+.block-title
+	img
+		width: 95%
+		height: 95%
+		border-radius: 12px
+		margin 25px auto
+		margin-top: 5px
+		
+.title-2 > p
+	h1()
+	padding: 0px
+	font-weight: bold
+	text-align: center
+

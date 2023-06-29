@@ -1,0 +1,17 @@
+html 
+  head
+    include headCode
+    block title 
+    block head
+  body 
+    .nav-menu
+      p Меню:
+      a.h1(href="index.html") Главная страница
+      a.h2(href="Page_02.html") Список зароботка исполнителей
+    block content
+  .page-footer
+    .fixed-bottom 
+      p made by 
+        a(href = 'https://vk.com/yanwsleep') Marat Kurbanov
+  footer
+    block footer

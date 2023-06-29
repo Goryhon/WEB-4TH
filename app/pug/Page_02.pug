@@ -1,0 +1,163 @@
+extends template
+
+mixin my-option
+  select
+    option(value='0') Нет
+    option(value='1') Исполнитель
+    option(value='2') Сервис
+    option(value='3') Выплаты за 2021
+    option(value='4') Выплаты за 2022
+    option(value='5') Лейбл
+
+block title
+  title Список исполнителей 
+
+block head 
+  link(rel="stylesheet", href="css/main-2.css")
+
+mixin table-create(a, b, c, d, e, f)
+  tr
+    td=a
+    td=b
+    td=c
+    td=d
+    td=e
+    td=f
+
+block footer 
+  //+footer-long-page
+  script(src="http://d3js.org/d3.v7.js")
+  script(src='js/js-3.js')
+  //script(src='js/js-3-diagramm.js')
+  script(src = 'js/graph.js')
+  
+
+block content
+    details(open)
+      summary.text-002 Блок настроек показа
+      .main-block
+        .block-01
+          .table 
+            .title-1-1
+              p График:
+            .left-edge-1
+              p.title-1 Значение по оси OХ: 
+              div
+                input#inp2-1(type='radio', name='ox', value='Исполнитель')
+                p Исполнитель
+              div
+                input#inp2-2(type='radio', name='ox', value='Стриминговый сервис', checked)
+                p Сервис              
+            .right-edge-1
+              p.title-1 Результат: 
+              div
+                input#in-1(type='checkbox', name='result', value='Выплаты за 2021 год (руб.)')
+                p Выручка за 2021
+              div   
+                input#in-2(type='checkbox', name='result', value='Выплаты за 2022 год (руб.)')
+                p Выручка за 2022
+            .right-edge-1
+              p.title-1 Тип графика:
+              div
+                input#type-1(type='radio', name='type', value='Точечный')
+                p Точечный
+              div
+                input#type-2(type='radio', name='type', value='Диаграмма')
+                p Диаграмма
+            input(type = 'button' id = 'butt-graph' value = 'Построить')
+        .block-02
+          .table.class_01 
+            .title-1-1
+              p Фильтр:
+            .left-edge-1
+              p Сервис:
+              p Исполнитель:	
+              p Общая выручка от:
+              p Общая выручка до:
+            .right-edge-1
+              p
+                input#name(type='text', placeholder='Введите название')
+              p
+                input#name(type='text', placeholder='Введите название')
+              p
+                input#name(type='text', placeholder='Не указано')
+              p
+                input#name(type='text', placeholder='Не указано')
+            button#butt-filter Найти 
+        .block-03
+          .table-2
+            .title-1-2
+              p Сортировка:
+            .left-edge-2
+              p Первый уровень
+              p Второй уровень 
+              p Третий уровень
+            .center-edge-2#sort-opt 
+              p.l1
+                +my-option
+              p.l2
+                +my-option
+              p.l3
+                +my-option
+            .right-edge-2
+              p.no-ind по убыванию?
+                input(type='checkbox', name='ack1', value='ack1')
+              p.no-ind по убыванию?
+                input(type='checkbox', name='ack1', value='ack1')
+              p.no-ind по убыванию?
+                input(type='checkbox', name='ack1', value='ack1')
+            button#butt-sort Построить
+      //div.block-graf
+        p График:
+        div#graf-container
+          div.curr-graff
+    br
+    br
+    p.text-001 Таблица
+      input(type = "button" value = "Скрыть таблицу" id = "hideButton")
+    .svg
+      svg
+    //.f50px-spase
+      p
+
+    #bad-news 
+      p Записей по данному запросу не найдено :(
+    #table-container
+      table#my-table
+        tr.title
+          td №
+          td Исполнитель
+          td Стриминговый сервис
+          td Выплаты за 2021 год (руб.)
+          td Выплаты за 2022 год (руб.)
+          td Лейбл
+
+        +table-create('1', 'Pharaoh', 'Spotify', '7000000', '1000000','ADAM MUSIC')
+        +table-create('2', 'Pharaoh', 'Yandex music', '4000000', '5000000','MTS' )
+        +table-create('3', 'Pharaoh', 'Vk', '1400000', '2500000','ADAM MUSIC' )
+        +table-create('4', 'Pharaoh', 'Boom', '2800000', '3000000','GAZGOLDER' )
+        +table-create('5', 'Pharaoh', 'Apple music', '6300000', '6500000','RHYMES MUSIC' )
+        +table-create('6', 'Джизус', 'Spotify', '800000', '4000000','GAZGOLDER' )
+        +table-create('7', 'Джизус', 'Yandex music', '400000', '500000','MTS' )
+        +table-create('8', 'Джизус', 'Vk', '90000', '120000','GAZGOLDER' )
+        +table-create('9', 'Джизус', 'Boom', '150000', '190000','HAJIME' )
+        +table-create('10', 'Джизус', 'Apple music', '470000', '700000','ADAM MUSIC' )
+        +table-create('11', 'INSTASAMKA', 'Spotify', '14000000', '10000000','GAZGOLDER' )
+        +table-create('12', 'INSTASAMKA', 'Yandex music', '8900000', '9000000','RHYMES MUSIC' )
+        +table-create('13', 'INSTASAMKA', 'Vk', '3300000', '4000000','ADAM MUSIC' )
+        +table-create('14', 'INSTASAMKA', 'Boom', '6500000', '9000000','GAZGOLDER' )
+        +table-create('15', 'INSTASAMKA', 'Apple music', '11500000', '9000000','ADAM MUSIC' )
+        +table-create('16', 'zavet', 'Spotify', '3360000', '4000000','MTS' )
+        +table-create('17', 'zavet', 'Yandex music', '900000', '1000000','RHYMES MUSIC' )
+        +table-create('18', 'zavet', 'Vk', '70000', '190000','GAZGOLDER' )
+        +table-create('19', 'zavet', 'Boom', '120000', '300000','HAJIME' )
+        +table-create('20', 'zavet', 'Apple music', '6700000', '4800000','ADAM MUSIC' )
+        +table-create('21', 'FABE09', 'Spotify', '1500', '0','HAJIME' )
+        +table-create('22', 'FABE09', 'Yandex music', '300', '20','GAZGOLDER' )
+        +table-create('23', 'FABE09', 'Vk', '54', '13','MTS' )
+        +table-create('24', 'FABE09', 'Boom', '144', '51','GAZGOLDER' )
+        +table-create('25', 'FABE09', 'Apple music', '1200', '1','GAZGOLDER' )
+        +table-create('26', 'FACE', 'Spotify', '760000', '300000','GAZGOLDER' )
+        +table-create('27', 'FACE', 'Yandex music', '300000', '200000','ADAM MUSIC' )
+        +table-create('28', 'FACE', 'Boom', '550000', '100000','MTS' )
+        +table-create('29', 'FACE', 'Apple music', '890000', '700000','MTS' )

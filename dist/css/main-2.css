@@ -1,0 +1,462 @@
+body {
+  background-color: #f0f0f0;
+}
+.h0 {
+  text-align: left;
+  font-size: x-small;
+  margin: 2px;
+}
+.h1,
+.h2 {
+  text-align: center;
+}
+.h1 {
+  font-size: 35px;
+}
+.h2 {
+  font-size: 25px;
+  font-style: oblique;
+}
+.block-01 {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: inherit;
+}
+.hl::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #cacaca;
+  margin-top: 10px; /* Отступ от верхнего края блока */
+}
+.my-text-01 {
+  margin: 50px;
+  margin-bottom: 5px;
+}
+.my-text-01,
+.my-text-02,
+.my-text-03 {
+  text-align: center;
+}
+.my-text-02 > p {
+  font-size: 20px;
+}
+.my-text-03 > p {
+  color: #ccc;
+}
+.my-text-01 > p {
+  color: #000;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Blogger Sans', sans-serif;
+}
+img {
+  align: middle;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 7px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  image-rendering: optimizeQuality;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+}
+#gallery {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+/*
+img
+	align middle 
+	width 200px
+	height 200px
+	margin 10px
+	border-radius: 7px
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+
+.img-1 img
+	border-radius: 10px
+	&:hover
+		//filter: blur(0px) contrast(115%)		
+	&:active
+		//filter: hue-rotate(180deg);
+
+a > img // Для выделения активного элемента
+	border: 2px solid col-3
+	&:hover
+		//border: 2px dashed col-3
+*/
+.block-block-2 {
+  width: 100%;
+  margin: auto;
+}
+.block-block-2 .img-1 {
+  width: 890px;
+  margin: auto;
+  overflow: auto;
+}
+@media (max-width: 890px) {
+  .block-block-2 > .img-1 {
+    width: 450px;
+    margin: auto;
+    overflow: auto;
+  }
+}
+.block-title > p,
+.main-title {
+  padding: 2px 7px;
+}
+.block-title {
+  display: grid;
+  grid-template-columns: -webkit-min-content auto;
+  grid-template-columns: min-content auto;
+  grid-template-rows: -webkit-min-content auto;
+  grid-template-rows: min-content auto;
+}
+.block-title > img {
+  grid-row: 1/3;
+}
+.block-title > p {
+  font-size: 25px;
+  font-style: oblique;
+  font-style: normal;
+  font-weight: bold;
+}
+@media (min-width: 1100px) {
+  .block-title,
+  details {
+    width: 1100px;
+    margin: auto;
+  }
+}
+.page-footer {
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+.page-footer.fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.left-edge-1,
+.right-edge-1 {
+  margin: 0px 10px;
+}
+.left-edge-2,
+.right-edge-2,
+.center-edge-2 {
+  margin: 0px 10px;
+  display: grid;
+}
+.left-edge-2 {
+  grid-column: 1/2;
+}
+.center-edge-2 {
+  grid-column: 2/3;
+}
+.right-edge-2 {
+  grid-column: 3/4;
+}
+.right-edge-2 p {
+  height: 20px;
+}
+p.title-1 {
+  font-weight: bold;
+}
+.title-1-1 {
+  display: grid;
+  grid-column: 1/3;
+  text-align: center;
+  font-size: x-large;
+}
+.title-1-2 {
+  display: grid;
+  grid-column: 1/4;
+  text-align: center;
+  font-size: x-large;
+}
+.f50px-spase {
+  width: 100%;
+  height: 50px;
+}
+.table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+}
+.table > button {
+  display: grid;
+  grid-column: 1/3;
+  width: 45%;
+  margin: auto;
+  border: solid #000 2px;
+  border-radius: 5px;
+  background-color: #00a3ff;
+/*
+		&:hover
+			background-color: bg-yel
+			border: dashed black 2px
+			*/
+}
+.table-2 {
+  display: grid;
+  grid-template-columns: -webkit-max-content -webkit-max-content auto;
+  grid-template-columns: max-content max-content auto;
+  grid-template-rows: 1fr;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+}
+.table-2 > button {
+  display: grid;
+  grid-column: 1/4;
+  width: 45%;
+  margin: auto;
+  border: solid #000 2px;
+  border-radius: 5px;
+  background-color: #00a3ff;
+/*
+		&:hover
+			background-color: bg-yel
+			border: dashed black 2px
+			*/
+}
+.main-block #butt-sort,
+.main-block #butt-filter,
+.main-block #butt-graf {
+  font-style: italic;
+}
+.main-block #butt-sort::-moz-selection, .main-block #butt-filter::-moz-selection, .main-block #butt-graf::-moz-selection {
+  background-color: #ffd600;
+  border: dashed #000 2px;
+}
+.main-block #butt-sort:hover,
+.main-block #butt-filter:hover,
+.main-block #butt-graf:hover,
+.main-block #butt-sort:active,
+.main-block #butt-filter:active,
+.main-block #butt-graf:active,
+.main-block #butt-sort::selection,
+.main-block #butt-filter::selection,
+.main-block #butt-graf::selection {
+  background-color: #ffd600;
+  border: dashed #000 2px;
+}
+.main-block #butt-sort:active,
+.main-block #butt-filter:active,
+.main-block #butt-graf:active {
+  font-weight: bold;
+  border: dashed #000 2px;
+}
+.table > p,
+.table > input {
+  display: block;
+}
+.right-edge-1 {
+  display: grid;
+  grid-column: 2/3;
+}
+.block-02 .left-edge-1 p {
+  line-height: 30px;
+}
+@media (min-width: 800px) {
+  details {
+    width: 800px;
+    margin: auto;
+  }
+}
+@media (min-width: 1200px) {
+  details {
+    width: 1200px;
+    margin: auto;
+  }
+  .main-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .block-01 {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .block-02 {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+  .table,
+  .table-2 {
+    width: 90%;
+    margin: 20px auto;
+  }
+  summary {
+    font-size: large;
+  }
+  .class_01 {
+    height: 430px;
+  }
+}
+.block-01 > .table {
+  width: 100%;
+  margin-left: 0px;
+}
+@media (max-width: 1200px) {
+  .block-01 > .table {
+    width: 94%;
+    margin: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .block-01 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+.block-02 {
+  margin-top: 20px;
+}
+@media (max-width: 1200px) {
+  .table.class_01 {
+    margin-bottom: 40px;
+  }
+}
+.main-block {
+  height: 600px;
+}
+@media (max-width: 1200px) {
+  .main-block {
+    height: auto;
+  }
+}
+.text-002 {
+  font-size: x-large;
+  border: 2px #000 solid;
+  background-color: #ffd600;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  text-align: center;
+}
+p.text-001 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 35px;
+}
+table {
+  width: 80%;
+  margin: auto;
+}
+table td {
+  padding: 4px 7px;
+  border: solid #000 1px;
+}
+tr.title td {
+  font-weight: bold;
+  border: solid #000 0px;
+}
+.cl-center {
+  text-align: center;
+}
+.img-class {
+  width: 80%;
+  margin: auto;
+}
+.img-class div {
+  display: inline;
+}
+.img-class > img {
+  width: 300px;
+  height: 200px;
+}
+.zoop {
+  height: 70px;
+}
+#bad-news {
+  text-align: center;
+}
+.block-01 input,
+.block-01 p {
+  display: inline-block;
+}
+.block-01 input#in-1[type='checkbox'] {
+  background-color: #ffa500;
+}
+.block-01 span {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-left: 7px;
+}
+.block-01 .tooltip {
+  position: relative;
+}
+.block-01 .tooltip:hover::before {
+  content: "Цвет линии на графике";
+  position: absolute;
+  top: -35px;
+  left: 0px;
+  background-color: inherit;
+  color: #000;
+  padding: 3px;
+  padding-left: 10px;
+  width: 180px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+.block-01 span#or {
+  background-color: #ffa500;
+}
+.block-01 span#gr {
+  background-color: #90ee90;
+}
+.block-01 span#bl {
+  background-color: #00a3ff;
+}
+.block-graf {
+  width: 90%;
+  height: auto;
+  margin: 30px auto;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.35);
+}
+.block-graf > p {
+  font-size: x-large;
+  text-align: center;
+  margin: 10px;
+}
+.curr-graff {
+  height: 300px;
+  width: 500px;
+  margin: auto;
+}
+.bar {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.bar-container {
+  margin-right: 4px;
+  margin-left: 4px;
+}

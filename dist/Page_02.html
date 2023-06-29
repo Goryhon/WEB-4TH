@@ -1,0 +1,420 @@
+
+<html> 
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Список исполнителей </title>
+    <link rel="stylesheet" href="css/main-2.css"/>
+  </head>
+  <body> 
+    <div class="nav-menu">
+      <p>Меню:</p><a class="h1" href="index.html">Главная страница</a><a class="h2" href="Page_02.html">Список зароботка исполнителей</a>
+    </div>
+    <details open="open">
+      <summary class="text-002">Блок настроек показа</summary>
+      <div class="main-block">
+        <div class="block-01">
+          <div class="table"> 
+            <div class="title-1-1">
+              <p>График:</p>
+            </div>
+            <div class="left-edge-1">
+              <p class="title-1">Значение по оси OХ: </p>
+              <div>
+                <input id="inp2-1" type="radio" name="ox" value="Исполнитель"/>
+                <p>Исполнитель</p>
+              </div>
+              <div>
+                <input id="inp2-2" type="radio" name="ox" value="Стриминговый сервис" checked="checked"/>
+                <p>Сервис              </p>
+              </div>
+            </div>
+            <div class="right-edge-1">
+              <p class="title-1">Результат: </p>
+              <div>
+                <input id="in-1" type="checkbox" name="result" value="Выплаты за 2021 год (руб.)"/>
+                <p>Выручка за 2021</p>
+              </div>
+              <div>  
+                <input id="in-2" type="checkbox" name="result" value="Выплаты за 2022 год (руб.)"/>
+                <p>Выручка за 2022</p>
+              </div>
+            </div>
+            <div class="right-edge-1">
+              <p class="title-1">Тип графика:</p>
+              <div>
+                <input id="type-1" type="radio" name="type" value="Точечный"/>
+                <p>Точечный</p>
+              </div>
+              <div>
+                <input id="type-2" type="radio" name="type" value="Диаграмма"/>
+                <p>Диаграмма</p>
+              </div>
+            </div>
+            <input type="button" id="butt-graph" value="Построить"/>
+          </div>
+        </div>
+        <div class="block-02">
+          <div class="table class_01"> 
+            <div class="title-1-1">
+              <p>Фильтр:</p>
+            </div>
+            <div class="left-edge-1">
+              <p>Сервис:</p>
+              <p>Исполнитель:	</p>
+              <p>Общая выручка от:</p>
+              <p>Общая выручка до:</p>
+            </div>
+            <div class="right-edge-1">
+              <p>
+                <input id="name" type="text" placeholder="Введите название"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Введите название"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Не указано"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Не указано"/>
+              </p>
+            </div>
+            <button id="butt-filter">Найти </button>
+          </div>
+        </div>
+        <div class="block-03">
+          <div class="table-2">
+            <div class="title-1-2">
+              <p>Сортировка:</p>
+            </div>
+            <div class="left-edge-2">
+              <p>Первый уровень</p>
+              <p>Второй уровень </p>
+              <p>Третий уровень</p>
+            </div>
+            <div class="center-edge-2" id="sort-opt"> 
+              <p class="l1">
+                <select>
+                  <option value="0">Нет</option>
+                  <option value="1">Исполнитель</option>
+                  <option value="2">Сервис</option>
+                  <option value="3">Выплаты за 2021</option>
+                  <option value="4">Выплаты за 2022</option>
+                  <option value="5">Лейбл</option>
+                </select>
+              </p>
+              <p class="l2">
+                <select>
+                  <option value="0">Нет</option>
+                  <option value="1">Исполнитель</option>
+                  <option value="2">Сервис</option>
+                  <option value="3">Выплаты за 2021</option>
+                  <option value="4">Выплаты за 2022</option>
+                  <option value="5">Лейбл</option>
+                </select>
+              </p>
+              <p class="l3">
+                <select>
+                  <option value="0">Нет</option>
+                  <option value="1">Исполнитель</option>
+                  <option value="2">Сервис</option>
+                  <option value="3">Выплаты за 2021</option>
+                  <option value="4">Выплаты за 2022</option>
+                  <option value="5">Лейбл</option>
+                </select>
+              </p>
+            </div>
+            <div class="right-edge-2">
+              <p class="no-ind">по убыванию?
+                <input type="checkbox" name="ack1" value="ack1"/>
+              </p>
+              <p class="no-ind">по убыванию?
+                <input type="checkbox" name="ack1" value="ack1"/>
+              </p>
+              <p class="no-ind">по убыванию?
+                <input type="checkbox" name="ack1" value="ack1"/>
+              </p>
+            </div>
+            <button id="butt-sort">Построить</button>
+          </div>
+        </div>
+      </div>
+      <!--div.block-graf
+      p График:
+      div#graf-container
+        div.curr-graff
+      -->
+    </details><br/><br/>
+    <p class="text-001">Таблица
+      <input type="button" value="Скрыть таблицу" id="hideButton"/>
+    </p>
+    <div class="svg">
+      <svg></svg>
+    </div>
+    <!--.f50px-spase
+    p
+    
+    -->
+    <div id="bad-news"> 
+      <p>Записей по данному запросу не найдено :(</p>
+    </div>
+    <div id="table-container">
+      <table id="my-table">
+        <tr class="title">
+          <td>№</td>
+          <td>Исполнитель</td>
+          <td>Стриминговый сервис</td>
+          <td>Выплаты за 2021 год (руб.)</td>
+          <td>Выплаты за 2022 год (руб.)</td>
+          <td>Лейбл</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Pharaoh</td>
+          <td>Spotify</td>
+          <td>7000000</td>
+          <td>1000000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Pharaoh</td>
+          <td>Yandex music</td>
+          <td>4000000</td>
+          <td>5000000</td>
+          <td>MTS</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Pharaoh</td>
+          <td>Vk</td>
+          <td>1400000</td>
+          <td>2500000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Pharaoh</td>
+          <td>Boom</td>
+          <td>2800000</td>
+          <td>3000000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Pharaoh</td>
+          <td>Apple music</td>
+          <td>6300000</td>
+          <td>6500000</td>
+          <td>RHYMES MUSIC</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Джизус</td>
+          <td>Spotify</td>
+          <td>800000</td>
+          <td>4000000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Джизус</td>
+          <td>Yandex music</td>
+          <td>400000</td>
+          <td>500000</td>
+          <td>MTS</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Джизус</td>
+          <td>Vk</td>
+          <td>90000</td>
+          <td>120000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Джизус</td>
+          <td>Boom</td>
+          <td>150000</td>
+          <td>190000</td>
+          <td>HAJIME</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Джизус</td>
+          <td>Apple music</td>
+          <td>470000</td>
+          <td>700000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>INSTASAMKA</td>
+          <td>Spotify</td>
+          <td>14000000</td>
+          <td>10000000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>INSTASAMKA</td>
+          <td>Yandex music</td>
+          <td>8900000</td>
+          <td>9000000</td>
+          <td>RHYMES MUSIC</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>INSTASAMKA</td>
+          <td>Vk</td>
+          <td>3300000</td>
+          <td>4000000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>INSTASAMKA</td>
+          <td>Boom</td>
+          <td>6500000</td>
+          <td>9000000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>INSTASAMKA</td>
+          <td>Apple music</td>
+          <td>11500000</td>
+          <td>9000000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>zavet</td>
+          <td>Spotify</td>
+          <td>3360000</td>
+          <td>4000000</td>
+          <td>MTS</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>zavet</td>
+          <td>Yandex music</td>
+          <td>900000</td>
+          <td>1000000</td>
+          <td>RHYMES MUSIC</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>zavet</td>
+          <td>Vk</td>
+          <td>70000</td>
+          <td>190000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>zavet</td>
+          <td>Boom</td>
+          <td>120000</td>
+          <td>300000</td>
+          <td>HAJIME</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>zavet</td>
+          <td>Apple music</td>
+          <td>6700000</td>
+          <td>4800000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>FABE09</td>
+          <td>Spotify</td>
+          <td>1500</td>
+          <td>0</td>
+          <td>HAJIME</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>FABE09</td>
+          <td>Yandex music</td>
+          <td>300</td>
+          <td>20</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>FABE09</td>
+          <td>Vk</td>
+          <td>54</td>
+          <td>13</td>
+          <td>MTS</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>FABE09</td>
+          <td>Boom</td>
+          <td>144</td>
+          <td>51</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>FABE09</td>
+          <td>Apple music</td>
+          <td>1200</td>
+          <td>1</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>FACE</td>
+          <td>Spotify</td>
+          <td>760000</td>
+          <td>300000</td>
+          <td>GAZGOLDER</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>FACE</td>
+          <td>Yandex music</td>
+          <td>300000</td>
+          <td>200000</td>
+          <td>ADAM MUSIC</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>FACE</td>
+          <td>Boom</td>
+          <td>550000</td>
+          <td>100000</td>
+          <td>MTS</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>FACE</td>
+          <td>Apple music</td>
+          <td>890000</td>
+          <td>700000</td>
+          <td>MTS</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <div class="page-footer">
+    <div class="fixed-bottom"> 
+      <p>made by <a href="https://vk.com/yanwsleep">Marat Kurbanov</a></p>
+    </div>
+  </div>
+  <footer>
+    <!--+footer-long-page-->
+    <script src="http://d3js.org/d3.v7.js"></script>
+    <script src="js/js-3.js"></script>
+    <!--script(src='js/js-3-diagramm.js')-->
+    <script src="js/graph.js"></script>
+  </footer>
+</html>
